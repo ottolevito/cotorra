@@ -1,0 +1,8 @@
+.col-md-12 {
+    display: flex; background:#F58426; justify-content: center; }
+.col-md-11 {display: flex; background:#006BB6;justify-content: space-around;
+    margin-left:33px;
+    
+    
+}
+header {color: white;}
