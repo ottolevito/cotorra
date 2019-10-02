@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Aprendiendo Javascript</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="js.css">
+        <link rel="stylesheet" href="reset.css">
+        <style>
+        
+        body{
+    margin: 10% 10%;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    line-height: 1.45;
+    letter-spacing: .12em;
+ 
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+body ul{
+    list-style-type: none;
+}
+
+h1{
+    font-size: 42px;
+   
+    border-bottom: 2px solid green;
+    
+}
+strong{
+    color: green;
+}
+        
+        
+        
+        </style>
+    </head>
+<body>
+<h1><img src="https://s3.amazonaws.com/pedales.net/images/javascript-illustration.png"></h1>
+<h2>Aprendiendo sobre los Objetos</h2>
+<p>Algo basado en grupo de informaciones o datos y sus efectos entre ellos mismos en vez de una serie de instrucciones. ~<em>Cambridge dictionary</em>.
+</p>
+
+<p>
+Los objetos llevaran tus habilidades de programacion de Javascript a otro nivel. Estos son fundamentales para manejar codigos complejos,
+comprender el modelo-documento del navegador, organizar tus datos. Hasta son la forma fundamental en que estan empacadas muchas librerias de javascript.</p>
+
+<p>Aqui esta el secreto: Los objetos de Javascript son solo colecciones de propiedades. Por ejemplo, digamos un carro. Un carro tiene propiedades:
+    <ul><li>marca: "chevy"</li>
+        <li>año: 1960</li>
+        <li>color: "rojo"</li>
+        <li>pasejeros: 4</li>
+        <li>convertible: false</li>
+        <li>mileage:20000</li>
+        <li>modelo: "Bel Air"</li></ul>
+      
+<p class="pleases">Piensa sobre un objeto como algo que almacena todos tus nombres y valores juntos, en otras palabras, engloba a las proiedades.
+    Como se crea un objeto? Todo lo que hay que hacer es agregar el listado de propiedades y valores a una variable.</p>
+    
+    var chevy = {<br><br>
+        marca: "Chevy",<br>
+        model: "Bel Air",<br>
+        year: 1960,<br>
+        color: "red";<br>
+        passengers: 2,<br>
+        convertible: false;<br>
+        mileage: 1021};<br>
+    
+    
+    </p>
+    <p>Ahora puedes agarrar el objeto y pasarlo alrededor, adquirir valor de el, cambiarlos, añadirle propiedades, o eliminarlo. </p>
+    <p>Hasta ahora hemos resuelto los problemas con una serie de variables declarativas, condicionales, for/while statements, y llamados a funciones. Esto es pensar de manera "procedimental"(me invente esa palabra..). Primero haz esto, luego aquello, y asi sucesivamente.
+     Con la programacion orientada en los objetos pensamos en los problemas en base a los objetos.
+Los objetos tienen estados y comportamientos. Te permite liberar la mente y pensar en niveles superiores. </p>
+    
+ <h2>Como funcionan las propiedades</h2>
+
+ <p>Ya tienes las propiedades del chevy empacadas en un objeto. Ahora que? <br>
+Puedes evaluar propiedades, eliminarlas, y en general, computar con ellas. </p>
+
+<h3>Como accesar una propiedad?</h3>
+<p>Para acceder a la propiedad de un objeto, empieza con su nombre<br> seguido de un punto, y luego el nombre de la propiedad.<br> Por ejemplo: <strong>fiat.mileage | chevy.color | civic13.model.</strong>
+Luego podemos usar las propiedades en cualquier expresion, ejemplo: <br><br>
+<strong>
+var miles = chevy.mileage;<br>
+if (miles &lt; 2000) {<br>
+    buyIt();
+
+}</strong>
+</p>
+<h3>Como cambiar una propiedad?</h3>
+
+<p>Tu puedes cambiar el valor de una propiedad en cualquier momento.
+Todo lo que tienes que hacer es asignarle a la propiedad un nuevo valor.   
+Por ejemplo: <strong>chevy.mileage = 10000;</strong>
+</p>
+<p>Puedes extender los objetos en cualquier momento con nuevas propiedades. Para hacerlo solo necesitas especificar la nueva propiedad y darle un valor.
+    Por ejemplo: <strong>chevy.needsWashing = true;</strong>
+</p>
+
+<h3>Como computar con propiedades</h3>
+<p>Computar con propiedades es muy simple: solo usa las propiedades como usarias cualquier variable(o cualquier valor). Por ejemplo:</p>
+
+<strong>
+if (chevy.year &lt; 1980) {<br>
+    classic = true;<br>
+
+}<br>
+for (var i = 0; i &lt; chevy.passengers; i++) {<br>
+    addPersonToCar();<br>
+}
+</strong>
+
+
+<h3>Borra y Agrega</h3>
+
+
+<p>Solo borra y añade 
+    Por ejemplo: <br>
+    <br><strong>delete chevy.color | chevy.gpsIncluded = true;</strong>
+</p>
+<h3>Notas: Puedes crear un objeto vacio:</h3>
+Por ejemplo: <br><strong>var lookmaNoProps = {};<br>
+lookmaNoProps.age = 10;<br>
+if (lookMaNoProps.age > 5)<br> {
+    lookMaNoProps.school = "Elementary";<br>
+}</strong><br></p>
+
+<h3>Notas: Como una variable empaqueta un objeto</h3>
+<p>Sabemos que una variable es un contenedor y que empaqueta un valor. <br>
+    Pero los numeros, las strings y los booleans son muy pequeños valores.<br>
+    Que tal los objetos? Puede una variable empaquetar un objeto de cualquier<br>
+     tamaño sin importar cuantas propiedades tenga?</p>
+     <p><ul>
+         <li>Las variables no empaquetan objetos</li>
+         <li>En cambio ellas empaquetan una referencia de un objeto. </li>
+         <li>La referencia es como un indicador o puntero o una direccion hacia el objeto actual.</li>
+         <li>En otras palabras, una variable no aguanta un objeto per se, sino sostiene algo como punto o indicador. </li></ul>
+     </p>
+
+     <p>Una variable primitiva representa el valor actual de una variable mientras que una variable objeto una manera de llegar hasta un objeto. Piensa sobre un objeto referente como otro valor de variable.</p> 
+
+     <p>Una variable referente aguanta un valor que es un referente hacia los objetos.</p>
+<p>Ejemplo de una variable primitiva:<br>
+   <strong> var myCar = {...};</strong><br>
+   Un referente del carro va hacia la variable.
+ El carro como objeto per se no va hacia dentro de la variable.
+</p>
+    <h3>Comportamiento</h3>
+    <h2>Como darle vida a los objetos</h2>
+    <p>Los objetos son activos. Los objetos pueden hacer cosas. Los perros no solo se sientan... ellos ladran, jugar a atrapar cosas. Un perro es un objeto tambien.
+        Igual los carros: lo manejamos, lo parkeamos, lo ponemos en reversa, y los frenamos. Veamos como se ponen los objetos en accion:<br><br>
+<strong>
+        var fiat = {<br>
+            make = "Fiat",<br>
+            model: "500",<br>
+            year: 1957,<br>
+            color: "Medium Blue",<br>
+            passengers: 2,<br>
+            convertible: flase,<br>
+            mileage: 88000,<br>
+            started: false,<br>
+            this.start: function() {<br>
+                started = true;<br>
+            },<br>
+            stop: function() {<br>
+                this.started = false;<br>
+            },
+            drive: function () {<br>
+                if (this.started) {
+                alert("Zoom zoom!);<br>
+            } else {<br>
+                alert("You need to start the engine first.");
+        }<br>
+    }<br>
+};<br>
+    
+    
+    
+    </strong>
+    </p>
+    <p>Hemos agregado una funcion directamente en el objeto. Todo lo que hay que hacer es agregarle una definicion-funcion a una propiedad. Asi mismo, las propiedades pueden tambien ser funciones.
+         Notas que no le asignamos un nombre a la definicion de la funcion, solo usamos la keywork function seguida por el cuerpo. El nombre de la funcion es el nombre de la propiedad. <strong>A una funcion dentro de un objeto se le llama <mark>metodo.</mark></strong> </p>
+
+<h3>Mejorando el metodo drive </h3>>
+<p></p>
+
+<script>
+
+
+var fiat = {
+            make = "Fiat",
+            model: "500",
+            year: 1957,
+            color: "Medium Blue",
+            passengers: 2,
+            convertible: false,
+            mileage: 88000,
+            started: false,
+           start: function() {
+                this.started = true;
+            },
+            stop: function() {
+                this.started = false;
+            },
+            drive: function () {
+                if (this.started) {
+                alert("Zoom zoom!");
+            } else {
+                alert("You need to start the engine first.");
+        }
+    }
+};</script>
+
+
+
+    
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="javascript.js"></script>
+</body>    
+</html>
